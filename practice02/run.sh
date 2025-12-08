@@ -31,8 +31,10 @@ mkdir -p $WORK_DIR/data
 sudo chown $USER_ID:$GROUP_ID $WORK_DIR/data
 
 ORACLE_DATABASE_CONTAINER_NAME=25-database-homework-practice02
+
 echo "stopping existing instance of oracle database..."
 sudo docker stop $ORACLE_DATABASE_CONTAINER_NAME
+
 echo "starting oracle database..."
 sudo docker run --rm -d \
   --name $ORACLE_DATABASE_CONTAINER_NAME \

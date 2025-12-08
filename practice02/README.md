@@ -19,5 +19,10 @@
    ```
    
    Username 输入登录使用的邮箱，Password 输入第 4 步中生成的 Secret Key。 
-6. 复制 `student.env.template` 文件为 `student.env`，并填入你的学号后四位。
-7. 运行 `run.sh`。
+6. 拉取镜像：
+   
+   ```shell
+   docker pull container-registry.oracle.com/database/enterprise:21.3.0.0
+   ```
+7. 复制 `student.env.template` 文件为 `student.env`，并填入你的学号后四位。
+8. 运行 `run.sh`。
