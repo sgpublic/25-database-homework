@@ -34,6 +34,7 @@ ORACLE_DATABASE_CONTAINER_NAME=25-database-homework-practice02
 
 echo "stopping existing instance of oracle database..."
 sudo docker stop $ORACLE_DATABASE_CONTAINER_NAME
+sleep 5
 
 echo "starting oracle database..."
 sudo docker run --rm -d \
@@ -57,8 +58,6 @@ sudo docker run --rm -it \
   --network host \
   --entrypoint sqlplus \
   -e TZ=$TZ \
-  -e ORACLE_SID=$INSTANCE_ID \
-  -e ORACLE_PDB=$INSTANCE_ID \
   container-registry.oracle.com/database/enterprise:21.3.0.0 \
   sys@//127.0.0.1:1521/$INSTANCE_ID as sysdba
 
