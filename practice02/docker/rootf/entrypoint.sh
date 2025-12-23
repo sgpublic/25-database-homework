@@ -109,4 +109,11 @@ echo "> id oracle"
 id oracle
 
 export PATH=$ORACLE_HOME/bin:$PATH
-gosu oracle sqlplus \/ as sysdba
+
+gosu oracle sqlplus -s / as sysdba <<EOF
+STARTUP;
+ALTER PLUGGABLE DATABASE ALL OPEN;
+exit;
+EOF
+
+gosu oracle bash
