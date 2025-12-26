@@ -11,7 +11,7 @@ export ORACLE_SID=$INSTANCE_ID
 
 if [ ! -f "$ORACLE_BASE/oradata/.install_done" ]; then
   echo "installing oracle database..."
-  rm -r $ORACLE_BASE/*
+  rm -rf $ORACLE_BASE/*
   cp -a /opt/oracledb_installer/* $ORACLE_BASE
   ORACLE_PWD=$ORACLE_PWD
 
@@ -112,7 +112,6 @@ export PATH=$ORACLE_HOME/bin:$PATH
 
 gosu oracle sqlplus -s / as sysdba <<EOF
 STARTUP;
-ALTER PLUGGABLE DATABASE ALL OPEN;
 exit;
 EOF
 
